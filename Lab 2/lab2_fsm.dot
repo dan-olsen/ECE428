@@ -1,10 +1,7 @@
 digraph finite_state_machine {
-	pad=0.5;
 	rankdir=LR;
 	node [shape = circle, fixedsize = true, width = "1.2v5", height = "1.2v5"];
-	//EMPTY [style = invis];
-	//EMPTY -> OFF [style = invis];
-	OFF:e -> OFF:w [label = "ON = 1, LB = 1"];
+	OFF:e -> OFF:sw [label = "ON = 1 and LB = 1"];
 	OFF -> EN_33 [label = "ON = 1, LB = 0, and LPM = 0"];
 	OFF -> EN_12_LP [label = "ON = 1, LB = 0, and LPM = 1"];
 	EN_12_LP -> LP;
