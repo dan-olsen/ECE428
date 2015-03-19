@@ -1,6 +1,6 @@
 digraph finite_state_machine {
 	rankdir=LR;
-	node [shape = circle, fixedsize = true, width = "1.2v5", height = "1.2v5"];
+	node [shape = circle, fixedsize = true, width = "1.5", height = "1.5"];
 	OFF:e -> OFF:sw [label = "ON = 1 and LB = 1"];
 	OFF -> EN_33 [label = "ON = 1, LB = 0, and LPM = 0"];
 	OFF -> EN_12_LP [label = "ON = 1, LB = 0, and LPM = 1"];
