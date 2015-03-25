@@ -1,0 +1,45 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	node [shape = circle, fixedsize = true, width = "1.5", height = "1.5"];
+	OFF:e -> OFF:sw [label = "ON = 1 and LB = 1"];
+	OFF -> EN_33 [label = "ON = 1, LB = 0, and LPM = 0"];
+	OFF -> EN_12_LP [label = "ON = 1, LB = 0, and LPM = 1"];
+	EN_12_LP -> LP;
+	LP -> EN_33_LP [label = "ON = 1, LB = 0, and LPM = 0"];
+	LP -> DIS_12_LP [label = "T3 and ON = 0"];
+	EN_33 -> EN_25 [label = "T1"];
+	EN_25 -> EN_12 [label = "T2"];
+	EN_12 -> ON;
+	ON -> DIS_12 [label = "T3 and ON = 0"];
+	DIS_33 -> OFF;
+	DIS_25 -> DIS_33 [label = "T5"];
+	DIS_12 -> DIS_25 [label = "T4"];
+	ON -> ON_LB [label = "ON = 1, and LB = 1"];
+	ON_LB -> DIS_12;
+	LP -> LP_LB [label = "ON = 1 and LB = 1"];
+	EN_33_LP -> EN_25_LP [label = "T1"];
+	EN_25_LP -> ON;
+	ON -> DIS_25_LP [label = "T3, ON = 1, LB = 0, and LPM = 1"];
+	DIS_33_LP -> LP;
+	DIS_25_LP -> DIS_33_LP [label = "T4"];
+	DIS_12_LP -> OFF;
+	LP_LB -> DIS_12_LP;
+
+	OFF  [label = "OFF"];
+	EN_33 [label = "3.3v_EN"];
+	EN_25 [label = "2.5v_EN"];
+	EN_12 [label = "1.2vv_EN"];
+	ON [label = "ON"];
+	ON_LB [label = "ON_LB"];
+	DIS_33 [label = "3.3v_DIS"];
+	DIS_25 [label = "2.5v_DIS"];
+	DIS_12 [label = "1.2v_DIS"];
+	EN_12_LP [label = "1.2v_EN_LP"];
+	LP [label = "LP"];
+	LP_LB [label = "LP_LB"];
+	EN_33_LP [label = "3.3v_EN_LP"];
+	EN_25_LP [label = "2.5v_EN_LP"];
+	DIS_33_LP [label = "3.3v_DIS_LP"];
+	DIS_25_LP [label = "2.5v_DIS_LP"];
+	DIS_12_LP [label = "1.2v_DIS_LP"];
+}
