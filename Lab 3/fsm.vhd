@@ -33,7 +33,8 @@ entity fsm is
     Port ( clk : in  STD_LOGIC;
            freq_sel : in  STD_LOGIC;
            prog_req : in  STD_LOGIC;
-           load_en : in  STD_LOGIC;
+			  load : out STD_LOGIC_VECTOR (9 downto 0);
+           load_en : out  STD_LOGIC;
            prog_en : in  STD_LOGIC);
 end fsm;
 
